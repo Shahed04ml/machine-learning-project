@@ -54,16 +54,6 @@ preprocessor = ColumnTransformer([
     ('num', num_transformer, num_features),
     ('cat', cat_transformer, cat_features)
 ])
-#visulizion of the data
-features[" education"].value_counts().plot(kind='barh')
-plt.show()
-
-features[" self_employed"].value_counts().plot(kind='barh')
-plt.show()
-
-sns.countplot(data=loan_dataset, x=" loan_status", color="red")
-plt.title("loan_status distribution")
-plt.show()
 
 print("________________________________________")
 #splitting the dataset into training and testing sets
