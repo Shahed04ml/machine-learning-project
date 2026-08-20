@@ -1,5 +1,5 @@
 from data_preprocessing import *
-
+import joblib
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -14,6 +14,7 @@ pipeline_rf = Pipeline([
 ])
 #fit the pipelines
 pipeline_rf.fit(X_train, y_train)
+joblib.dump(pipeline_rf, "../model_rf.pkl")
 
 #logistic regression pipeline
 pipeline_lr = Pipeline([
@@ -25,3 +26,4 @@ pipeline_lr = Pipeline([
 
 #fit the pipelines
 pipeline_lr.fit(X_train, y_train)
+joblib.dump(pipeline_lr, "../model_lr.pkl")
